@@ -21,7 +21,7 @@ const Login = () => {
         return(
             <Check>
                 <input type="checkbox" id={label} name="scales" />
-                <label for={label}>{label}</label>
+                <label htmlFor={label}>{label}</label>
             </Check>
         )
     }
@@ -78,12 +78,19 @@ const Left = styled.div`
         height:70%;
         width:60%;
     }
+    @media (max-width: 624px) {
+    display:none;
+  }
 `
 const Right = styled.div`
     flex:0.55;
     display: flex;
     justify-content:center;
     align-items:center;
+
+    @media (max-width: 624px) {
+    flex:1;
+  }
 `
 
 const LoginWrapper = styled.div`
