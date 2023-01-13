@@ -9,8 +9,10 @@ const Login = () => {
         return(
             <Inputs>
                 <p>{label}</p>
-                <input type={type} placeholder={placeholder} />
-                {hideIcon && <VisibilityOffIcon />}
+                <div>
+                    <input type={type} placeholder={placeholder} />
+                    {hideIcon && <VisibilityOffIcon style={{fontSize:14,padding:6,cursor:'pointer'}} />}
+                </div>
             </Inputs>
         )
     }
@@ -34,7 +36,7 @@ const Login = () => {
                 <LoginContent>
                     <LoginLogo><h2>Login</h2></LoginLogo>
                     {inputField("Login ID","Enter Login ID","text")}
-                    {inputField("Password","Enter Password","password")}
+                    {inputField("Password","Enter Password","password",true)}
                     <CheckContainerOne>
                         {checkBox("Remember Me")}  
                         <a href='#'>change password</a> 
@@ -135,6 +137,14 @@ const Inputs = styled.div`
     display:flex;
     flex-direction:column;
     margin-bottom:4px;
+    div{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        color:gray;
+        border:1px solid gray;
+        border-radius:4px;
+    }
     p{
         font-size:15px;
         font-weight:600;
@@ -145,7 +155,8 @@ const Inputs = styled.div`
         padding:8px;
         outline:none;
         color:gray;
-        border:1px solid gray;
+        border:none;
+        width:90%;
         border-radius:4px;
     }
 `
